@@ -170,8 +170,8 @@ export function ChatSidebar({
 
         {/* Legal block — RKN requirement */}
         <div
-          className="pt-3 mt-3 border-t border-border text-muted-foreground"
-          style={{ fontSize: 9, lineHeight: 1.3 }}
+          className="border-t border-border text-muted-foreground"
+          style={{ fontSize: 9, lineHeight: 1.3, paddingTop: 12, marginTop: 12, paddingBottom: 16 }}
         >
           <a
             href="https://t.me/valeriia_avitolog"

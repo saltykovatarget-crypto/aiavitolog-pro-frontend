@@ -148,7 +148,7 @@ export function WalletPage({
           `,
         }}
       />
-      <div className="relative z-10 container max-w-[760px] mx-auto px-5 py-8 md:py-12">
+      <div className="relative z-10 container mx-auto px-5" style={{ maxWidth: 760, paddingTop: 48, paddingBottom: 48 }}>
       <h1 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 md:mb-8">
         Кошелёк
       </h1>
@@ -253,7 +253,7 @@ export function WalletPage({
       </div>
 
       {/* Footer note */}
-      <div className="mt-8 text-center text-[11px] text-muted-foreground leading-relaxed">
+      <div className="text-center text-muted-foreground leading-relaxed" style={{ marginTop: 32, fontSize: 11 }}>
         Деньги не сгорают. Возврат — через поддержку.
       </div>
 

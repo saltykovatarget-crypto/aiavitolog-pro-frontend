@@ -13,7 +13,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="footer-section pt-32 pb-12">
+    <footer className="footer-section" style={{ paddingTop: 128, paddingBottom: 48 }}>
       <div className="container max-w-[1200px] mx-auto px-5">
 
         {/* Telegram channel CTA — наверху подвала */}
