@@ -89,7 +89,7 @@ export function ToolParserPage({ onBack }: ToolParserPageProps) {
             Изучи <span style={gradientText}>конкурентов</span> в нише
           </h1>
           <p className="text-muted-foreground" style={{ fontSize: 16, lineHeight: 1.55, maxWidth: 600 }}>
-            AI разберёт топ-200 объявлений Авито: цены, фото, заголовки. Через 1-3 минуты пришлёт отчёт с инсайтами.
+            AI Авитолог разберёт топ-200 объявлений Авито: цены, фото, заголовки. Через 1-3 минуты пришлёт отчёт с инсайтами.
           </p>
         </div>
       </Reveal>

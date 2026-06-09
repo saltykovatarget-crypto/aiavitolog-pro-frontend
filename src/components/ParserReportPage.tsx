@@ -100,7 +100,7 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
             Ниша: <span style={gradientTextStyle}>{data.niche}</span>
           </h2>
           <p className="text-muted-foreground" style={{ fontSize: 15, lineHeight: 1.55, maxWidth: 600 }}>
-            AI разобрал топ-объявления, посмотри что у конкурентов
+            AI Авитолог разобрал топ-объявления, смотри что у конкурентов
           </p>
 
           <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
@@ -348,7 +348,7 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
       {/* Инсайты */}
       <Reveal>
       <section style={{ marginBottom: 48 }}>
-        <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Что заметил AI</h3>
+        <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Что заметил AI Авитолог</h3>
         <div className="space-y-3">
           {data.insights.map((insight, idx) => (
             <RevealItem key={idx} index={idx} staggerDelay={0.07}>
@@ -431,7 +431,7 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
         >
           <div style={{ maxWidth: 560 }}>
             <h3 style={{ fontSize: 22, fontWeight: 700, color: '#fff', margin: 0, marginBottom: 8 }}>
-              Запустить этот разбор в чат с AI?
+              Запустить этот разбор в чат с AI Авитологом?
             </h3>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.88)', margin: 0 }}>
               Продолжим в чате — построим стратегию входа в нишу по 10-шаговой методологии

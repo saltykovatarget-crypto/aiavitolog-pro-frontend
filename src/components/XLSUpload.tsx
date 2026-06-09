@@ -129,7 +129,7 @@ export function XLSUpload({
           <div className="min-w-0 flex-1">
             <div className="text-sm font-semibold text-foreground">Анализ статистики кабинета Авито</div>
             <div className="text-xs text-muted-foreground mt-0.5">
-              Залей XLS-выгрузку из своего кабинета — AI найдёт слабые места, где теряются заявки. {ACCEPTED_TYPES}, до {MAX_SIZE_MB} МБ.
+              Залей XLS-выгрузку из кабинета Авито — AI Авитолог найдёт слабые места где теряются заявки. {ACCEPTED_TYPES}, до {MAX_SIZE_MB} МБ.
             </div>
           </div>
           <button

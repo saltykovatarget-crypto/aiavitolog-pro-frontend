@@ -98,7 +98,7 @@ export function ToolXlsPage({ onBack }: ToolXlsPageProps) {
             Залей <span style={gradientText}>XLS</span> из кабинета
           </h1>
           <p className="text-muted-foreground" style={{ fontSize: 16, lineHeight: 1.55, maxWidth: 600 }}>
-            AI найдёт почему теряются заявки: просмотры, конверсия, стоимость заявки.
+            AI Авитолог найдёт почему теряются заявки: просмотры, конверсия, стоимость заявки.
           </p>
         </div>
       </Reveal>

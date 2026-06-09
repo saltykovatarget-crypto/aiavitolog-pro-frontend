@@ -67,7 +67,7 @@ export function ParserPanel({
         <div className="min-w-0 flex-1">
           <div className="text-base md:text-lg font-bold text-foreground">Парсер конкурентов</div>
           <div className="text-xs md:text-sm text-muted-foreground mt-0.5">
-            AI разбирает топ-200 объявлений и сразу находит точки роста — без слива бюджета
+            AI Авитолог разбирает топ-200 объявлений и сразу находит точки роста — без слива бюджета
           </div>
         </div>
       </div>

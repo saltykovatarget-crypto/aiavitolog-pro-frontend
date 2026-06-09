@@ -8,8 +8,8 @@ interface WalletInfoProps {
 
 const ACTIONS = [
   { icon: '💬', name: 'Ответ AI Авитолога', price: 5 },
-  { icon: '🔍', name: 'Парсер конкурентов', price: 190, hint: 'AI Авитолог найдёт точки роста без слива бюджета' },
-  { icon: '📊', name: 'Анализ статистики кабинета Авито', price: 50, hint: 'Заливаешь XLS — получаешь разбор' },
+  { icon: '🔍', name: 'Парсер конкурентов', price: 190, hint: 'AI Авитолог находит точки роста без слива бюджета' },
+  { icon: '📊', name: 'Анализ статистики кабинета Авито', price: 50, hint: 'Заливаешь XLS — AI Авитолог разбирает и показывает слабые места' },
   { icon: '🖼️', name: 'Генерация фото для объявлений', price: 19 },
   { icon: '✏️', name: 'Наложение плашки на фото', price: 9 },
   { icon: '📡', name: 'Проверка позиций объявлений', price: 99 },
@@ -66,7 +66,7 @@ export function WalletInfo({ onRegister }: WalletInfoProps) {
             <div className="wi-bonus-emoji">🎁</div>
             <div className="wi-bonus-text">
               <div className="wi-bonus-title">50 ₽ бонусом при регистрации</div>
-              <div className="wi-bonus-sub">Хватит на 10 ответов AI чтобы попробовать без вложений</div>
+              <div className="wi-bonus-sub">Хватит на 10 ответов AI Авитолога чтобы попробовать без вложений</div>
             </div>
           </div>
         </Reveal>

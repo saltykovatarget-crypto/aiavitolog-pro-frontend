@@ -163,7 +163,7 @@ export function HowItWorks({ onNavigateToChat }: HowItWorksProps) {
               Как работает методология
             </h2>
             <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
-              10 шагов, разбитые на 3 части. Каждый шаг — понятная задача для опытного авитолога, усиленного AI.
+              10 шагов, разбитые на 3 части. Каждый шаг — понятная задача для опытного авитолога, усиленного AI Авитологом.
             </p>
           </div>
         </Reveal>
@@ -199,7 +199,7 @@ export function HowItWorks({ onNavigateToChat }: HowItWorksProps) {
               Начать с первого шага бесплатно →
             </Button>
             <div className="mt-3 text-[12px] text-muted-foreground">
-              50 ₽ бонусом при регистрации — хватит на 10 ответов AI
+              50 ₽ бонусом при регистрации — хватит на 10 ответов AI Авитолога
             </div>
           </div>
         </Reveal>

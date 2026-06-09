@@ -282,7 +282,7 @@ export function ToolsPage({
                     boxShadow: '0 0 12px rgba(52,211,153,0.6)',
                   }}
                 />
-                Каталог инструментов · {TOOLS_BY_GROUP.reduce((acc, g) => acc + g.tools.length, 0)} штук
+                Каталог инструментов
               </div>
 
               <h2
