@@ -181,11 +181,6 @@ export function UniversalHeader({
       );
     }
 
-    if (userState === 'registered_free' && !showMarketingNavigation) {
-      return (
-        <WalletBalance size="sm" onTopup={() => setTopupOpen(true)} />
-      );
-    }
     return null;
   };
 
@@ -267,6 +262,9 @@ export function UniversalHeader({
 
     return (
       <div className="flex items-center gap-2">
+        {userState === 'registered_free' && (
+          <WalletBalance size="sm" onTopup={() => setTopupOpen(true)} />
+        )}
 
         <DropdownMenu>
           <DropdownMenuTrigger className="w-10 h-10 p-0 rounded-full hover:bg-accent hover:bg-accent/10 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 flex items-center justify-center">
@@ -354,13 +352,6 @@ export function UniversalHeader({
       );
     }
 
-    if (userState === 'registered_free') {
-      return (
-        <div className="md:hidden w-full px-5 py-3 border-b border-border bg-card/50 backdrop-blur-[10px] flex justify-center">
-          <WalletBalance size="sm" onTopup={() => setTopupOpen(true)} />
-        </div>
-      );
-    }
     return null;
   };
 

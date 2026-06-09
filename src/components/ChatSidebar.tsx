@@ -50,7 +50,16 @@ export function ChatSidebar({
 
   return (
     <div className={`w-[260px] lg:w-[260px] md:w-[220px] flex-shrink-0 ${className}`}>
-      <Card className="p-4 h-full flex flex-col shadow-card">
+      <Card
+        className="p-4 h-full flex flex-col"
+        style={{
+          background: 'transparent',
+          border: 'none',
+          borderRight: '1px solid var(--border)',
+          borderRadius: 0,
+          boxShadow: 'none',
+        }}
+      >
         {/* New chat button */}
         <Button
           className="w-full rounded-full gap-2"
@@ -161,8 +170,8 @@ export function ChatSidebar({
 
         {/* Legal block — RKN requirement */}
         <div
-          className="pt-3 mt-3 border-t border-border flex flex-col gap-1 text-muted-foreground"
-          style={{ fontSize: 10, lineHeight: 1.4 }}
+          className="pt-3 mt-3 border-t border-border text-muted-foreground"
+          style={{ fontSize: 9, lineHeight: 1.3 }}
         >
           <a
             href="https://t.me/valeriia_avitolog"
@@ -174,30 +183,34 @@ export function ChatSidebar({
             <Send className="w-3 h-3" />
             Наш блог
           </a>
-          <a
-            href="/policies/privacy-policy"
-            className="hover:text-foreground transition"
-            style={{ display: 'block', fontSize: 10, lineHeight: 1.4, padding: '2px 0' }}
+          <div
+            className="flex flex-wrap items-center gap-x-1 gap-y-0.5"
+            style={{ fontSize: 9, lineHeight: 1.3 }}
           >
-            Политика конфиденциальности
-          </a>
-          <a
-            href="/offer"
-            className="hover:text-foreground transition"
-            style={{ display: 'block', fontSize: 10, lineHeight: 1.4, padding: '2px 0' }}
-          >
-            Пользовательское соглашение
-          </a>
-          <a
-            href="/cookies"
-            className="hover:text-foreground transition"
-            style={{ display: 'block', fontSize: 10, lineHeight: 1.4, padding: '2px 0' }}
-          >
-            Политика cookies
-          </a>
+            <a
+              href="/policies/privacy-policy"
+              className="hover:text-foreground transition"
+            >
+              Политика конф.
+            </a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="/offer"
+              className="hover:text-foreground transition"
+            >
+              Польз. соглашение
+            </a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="/cookies"
+              className="hover:text-foreground transition"
+            >
+              Cookies
+            </a>
+          </div>
           <p
             className="opacity-50"
-            style={{ fontSize: 9, lineHeight: 1.4, paddingTop: 6, margin: 0 }}
+            style={{ fontSize: 9, lineHeight: 1.3, paddingTop: 4, margin: 0 }}
           >
             © 2024–{new Date().getFullYear()} ИП Салтыкова В.В. · ИНН 540303308700
           </p>

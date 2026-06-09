@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowLeft, ChevronRight, Target, Search, MessageCircle, BarChart3, User, Radar, Image as ImageIcon, Pencil } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronRight, Target, Search, MessageCircle, BarChart3, User, Radar, Image as ImageIcon, Pencil, Sun, Moon } from 'lucide-react';
 
 type QuickStartIcon = React.ComponentType<{ className?: string }>;
 import { Button } from '../ui/button';
@@ -203,6 +203,37 @@ export function ToolsPage({
   const [topupOpen, setTopupOpen] = useState(false);
   const runs = recentRuns ?? MOCK_RECENT_RUNS;
 
+  // Theme toggle — синхронизирован с App.tsx через localStorage 'theme'
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved) return saved === 'dark';
+      return true;
+    } catch {
+      return true;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch {}
+  }, [isDark]);
+
+  const goHome = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onBack) {
+      onBack();
+    } else {
+      window.location.hash = 'chat';
+    }
+  };
+
   // Подкорректировать статус инструмента в зависимости от баланса
   const adjustStatus = (tool: ToolDefinition): ToolStatus => {
     if (tool.status === 'coming_soon') return 'coming_soon';
@@ -236,20 +267,64 @@ export function ToolsPage({
         }}
       >
         <div className="container max-w-[1200px] mx-auto px-5 h-14 flex items-center justify-between gap-3">
-          <button
-            type="button"
-            onClick={onBack}
-            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition"
+          {/* Левый блок: бренд-лого + название + бейдж PRO (как в UniversalHeader) */}
+          <a
+            href="#chat"
+            onClick={goHome}
+            className="flex min-w-0 items-center gap-2 hover:opacity-90 transition-opacity"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Назад
-          </button>
-          <h1 className="text-base md:text-lg font-bold">Инструменты</h1>
-          <WalletBalance
-            size="sm"
-            externalBalanceKopecks={balanceKopecks}
-            onTopup={() => setTopupOpen(true)}
-          />
+            <img
+              src="/cases/favicon/logo-header.png"
+              alt="AI Авитолог PRO"
+              className="object-contain shrink-0 block"
+              style={{
+                width: '36px',
+                height: '36px',
+                maxWidth: '36px',
+                maxHeight: '36px',
+                minWidth: '36px',
+                minHeight: '36px',
+              }}
+            />
+            <span className="min-w-0 flex items-center gap-1.5 font-semibold text-foreground">
+              <span className="truncate max-w-[110px] md:max-w-none">AI Авитолог</span>
+              <span
+                className="text-[11px] font-bold text-white px-2 py-1 rounded-md leading-none tracking-wider"
+                style={{ backgroundColor: '#6F42C1' }}
+              >
+                PRO
+              </span>
+            </span>
+          </a>
+
+          {/* Центр: пусто */}
+          <div />
+
+          {/* Правый блок: WalletBalance + переключение темы + аватар */}
+          <div className="flex items-center gap-2">
+            <WalletBalance
+              size="sm"
+              externalBalanceKopecks={balanceKopecks}
+              onTopup={() => setTopupOpen(true)}
+            />
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsDark(!isDark)}
+              className="w-9 h-9 p-0"
+              aria-label={isDark ? 'Включить светлую тему' : 'Включить тёмную тему'}
+            >
+              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </Button>
+            <button
+              type="button"
+              onClick={goHome}
+              className="w-9 h-9 rounded-full bg-gradient-to-r from-[#6F42C1] to-[#9A7FE0] flex items-center justify-center hover:opacity-90 transition"
+              aria-label="В чат"
+            >
+              <User className="w-4 h-4 text-white" />
+            </button>
+          </div>
         </div>
       </div>
 
