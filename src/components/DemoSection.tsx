@@ -1,0 +1,1 @@
+// DemoSection removed - static demo content not needed for backend integration

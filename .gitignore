@@ -1,0 +1,40 @@
+# Node
+node_modules/
+.dist/
+/dist/
+*.log
+
+# Env
+.env
+.env.local
+backend/.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+backend/.venv/
+
+# Alembic artifacts
+backend/alembic/versions/__pycache__/
+
+# OS
+.DS_Store
+.idea/
+.vscode/
+
+# Claude / служебное
+.claude/
+
+# Бэк и админка — отдельно (Иван работает в своём репо)
+backend/
+Admin/
+deploy/
+local-patches/
+docs/
+scripts/
+save-patch.sh
+start-local.command
+start-local.sh
+stop-local.command
+DEPLOY.md
