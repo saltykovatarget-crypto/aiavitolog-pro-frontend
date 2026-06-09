@@ -19,7 +19,7 @@ const STEPS = [
   },
   {
     badge: '03',
-    title: 'AI разбирает в чате',
+    title: 'AI Авитолог разбирает в чате',
     description: 'Что вижу, что это значит, какой следующий шаг. Без интерпретации цифры — просто цифры.',
   },
 ];
@@ -36,7 +36,7 @@ export function AiInterpretation({ onNavigateToChat }: AiInterpretationProps) {
           </h2>
           <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
             Конкуренты дают данные — и оставляют тебя с ними один на один.
-            У нас после каждого прогона AI расшифровывает результат в чате
+            У нас после каждого прогона AI Авитолог расшифровывает результат в чате
             и ведёт по методологии дальше.
           </p>
         </div>

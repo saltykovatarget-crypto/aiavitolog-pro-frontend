@@ -176,7 +176,7 @@ export function Hero({ onNavigateToChat }: HeroProps) {
 
                   <div className="mockup-msg mockup-msg--ai mockup-msg--compact">
                     <span className="mockup-typing"><span/><span/><span/></span>
-                    AI разбирает результат и формирует стратегию…
+                    AI Авитолог разбирает результат и формирует стратегию…
                   </div>
                 </main>
               </div>

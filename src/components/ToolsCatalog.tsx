@@ -4,6 +4,7 @@ import { RevealItem } from './landing/Reveal';
 
 interface ToolsCatalogProps {
   onNavigateToChat?: () => void;
+  onNavigateToTools?: () => void;
 }
 
 type ToolStatus = 'active' | 'beta' | 'soon';
@@ -26,7 +27,7 @@ const TOOLS: ToolDef[] = [
     id: 'parser',
     step: 'Шаг 1',
     name: 'Парсер конкурентов',
-    description: 'AI разбирает топ-200 объявлений и находит точки роста — сразу видно где конкуренты сильны, а где можно вырасти без слива бюджета. 190 ₽ за прогон.',
+    description: 'AI Авитолог разбирает топ-200 объявлений и находит точки роста — сразу видно где конкуренты сильны, а где можно вырасти без слива бюджета. 190 ₽ за прогон.',
     status: 'active',
     icon: (
       // Парсер: окно списка с подсветкой строк и magnifier
@@ -44,7 +45,7 @@ const TOOLS: ToolDef[] = [
     id: 'market-analysis',
     step: 'Шаг 0',
     name: 'Анализ статистики кабинета',
-    description: 'Заливаешь XLS-выгрузку из своего кабинета Авито → AI разбирает показатели и находит слабые места, на которых теряются заявки. 50 ₽.',
+    description: 'Заливаешь XLS-выгрузку из своего кабинета Авито → AI Авитолог разбирает показатели и находит слабые места, на которых теряются заявки. 50 ₽.',
     status: 'beta',
     icon: (
       // Анализ рынка: 3 столбца + восходящая стрелка
@@ -95,7 +96,8 @@ const TOOLS: ToolDef[] = [
   },
 ];
 
-export function ToolsCatalog({ onNavigateToChat }: ToolsCatalogProps) {
+export function ToolsCatalog({ onNavigateToChat, onNavigateToTools }: ToolsCatalogProps) {
+  const goToTools = onNavigateToTools ?? (() => { window.location.hash = 'tools'; });
   return (
     <section className="py-16 md:py-24 relative overflow-hidden" id="tools">
       <div
@@ -112,18 +114,21 @@ export function ToolsCatalog({ onNavigateToChat }: ToolsCatalogProps) {
             Инструменты сервиса
           </h2>
           <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
-            Каждый инструмент решает задачу одного шага методологии. Можно проходить шаги в чате с AI или использовать инструменты отдельно.
+            Каждый инструмент решает задачу одного шага методологии. Можно проходить шаги в чате с AI Авитологом или использовать инструменты отдельно.
           </p>
         </div>
 
         <div className="tools-grid">
           {TOOLS.map((tool, i) => (
-            <RevealItem
-              key={tool.id}
-              index={i}
-              staggerDelay={0.1}
-              className={`tool-card tool-card--${tool.status}`}
-            >
+            <RevealItem key={tool.id} index={i} staggerDelay={0.1}>
+              <div
+                className={`tool-card tool-card--${tool.status}`}
+                onClick={goToTools}
+                style={{ cursor: 'pointer' }}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') goToTools(); }}
+              >
               <div className="tool-card-head">
                 <div className="tool-icon">{tool.icon}</div>
                 <div className="tool-step">{tool.step}</div>
@@ -139,7 +144,7 @@ export function ToolsCatalog({ onNavigateToChat }: ToolsCatalogProps) {
                     <Button
                       size="sm"
                       className="hero-cta-primary rounded-full px-5 text-sm"
-                      onClick={onNavigateToChat}
+                      onClick={(e) => { e.stopPropagation(); goToTools(); }}
                     >
                       Попробовать
                     </Button>
@@ -148,7 +153,11 @@ export function ToolsCatalog({ onNavigateToChat }: ToolsCatalogProps) {
                 {tool.status === 'beta' && (
                   <>
                     <span className="tool-badge tool-badge--beta">В&nbsp;разработке</span>
-                    <button className="tool-notify-btn" type="button">
+                    <button
+                      className="tool-notify-btn"
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); goToTools(); }}
+                    >
                       Сообщить о запуске →
                     </button>
                   </>
@@ -156,14 +165,35 @@ export function ToolsCatalog({ onNavigateToChat }: ToolsCatalogProps) {
                 {tool.status === 'soon' && (
                   <>
                     <span className="tool-badge tool-badge--soon">Скоро</span>
-                    <button className="tool-notify-btn" type="button">
+                    <button
+                      className="tool-notify-btn"
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); goToTools(); }}
+                    >
                       Сообщить о запуске →
                     </button>
                   </>
                 )}
               </div>
+              </div>
             </RevealItem>
           ))}
+        </div>
+
+        {/* Большая кнопка — все инструменты */}
+        <div className="text-center mt-10 md:mt-14">
+          <Button
+            size="lg"
+            onClick={goToTools}
+            className="rounded-full px-8 h-12 font-bold"
+            style={{
+              background: 'linear-gradient(135deg, #6F42C1 0%, #9A7FE0 100%)',
+              color: '#fff',
+              boxShadow: '0 8px 24px rgba(111,66,193,0.3)',
+            }}
+          >
+            Все инструменты →
+          </Button>
         </div>
       </div>
 

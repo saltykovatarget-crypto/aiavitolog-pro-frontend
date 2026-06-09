@@ -524,6 +524,7 @@ export default function App() {
           <Component
             onNavigateToChat={commonProps.onNavigateToChat}
             onNavigateToPricing={commonProps.onNavigateToPricing}
+            onNavigateToTools={commonProps.onNavigateToTools}
           />
         );
     }

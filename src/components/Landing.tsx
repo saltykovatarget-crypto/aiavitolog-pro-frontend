@@ -25,9 +25,10 @@ import { Footer } from './Footer';
 interface LandingProps {
   onNavigateToChat?: () => void;
   onNavigateToPricing?: () => void;
+  onNavigateToTools?: () => void;
 }
 
-export function Landing({ onNavigateToChat, onNavigateToPricing }: LandingProps) {
+export function Landing({ onNavigateToChat, onNavigateToPricing, onNavigateToTools }: LandingProps) {
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
@@ -127,7 +128,7 @@ export function Landing({ onNavigateToChat, onNavigateToPricing }: LandingProps)
       <main>
         <Hero onNavigateToChat={onNavigateToChat} />
         <HowItWorks onNavigateToChat={onNavigateToChat} />
-        <ToolsCatalog onNavigateToChat={onNavigateToChat} />
+        <ToolsCatalog onNavigateToChat={onNavigateToChat} onNavigateToTools={onNavigateToTools} />
         <AiInterpretation onNavigateToChat={onNavigateToChat} />
         <BeforeAfter />
         <ExpertProfile />
