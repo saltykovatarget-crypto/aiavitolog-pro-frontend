@@ -186,7 +186,7 @@ function CaseCard({ caseStudy }: { caseStudy: CaseStudy }) {
 
       {/* Summary - Fixed 2 Lines Max */}
       <div className="text-center">
-        <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">{caseStudy.summary}</p>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto">{caseStudy.summary}</p>
       </div>
 
       {/* Collapsible Accordion */}
@@ -292,10 +292,10 @@ export function BeforeAfter() {
       <div className="container max-w-[1200px] mx-auto px-5">
         {/* Compact Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight m-0 text-foreground">
+          <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight m-0 text-foreground">
             Кейсы роста на Авито после перехода на систему AI-Авитолог PRO
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto">
             Листай — смотри ДО/ПОСЛЕ и результат
           </p>
         </div>

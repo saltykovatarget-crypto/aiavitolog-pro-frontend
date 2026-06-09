@@ -51,12 +51,7 @@ const MOCK_PARSER_REPORT: ParserReportData | undefined = undefined;
 
 const formatNumber = (n: number) => n.toLocaleString('ru-RU');
 
-const gradientTextStyle: React.CSSProperties = {
-  background: 'linear-gradient(180deg,#C5B0F0,#6F42C1)',
-  WebkitBackgroundClip: 'text',
-  backgroundClip: 'text',
-  color: 'transparent',
-};
+// Используется через className="brand-gradient-text" (адаптивно по теме)
 
 export function ParserReportPage({ onBack }: ParserReportPageProps) {
   const data = MOCK_PARSER_REPORT ?? fallback;
@@ -75,13 +70,13 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
             style={{
               padding: '8px 14px',
               borderRadius: 999,
-              background: 'rgba(20,25,38,0.55)',
+              background: 'color-mix(in oklab, var(--card) 75%, transparent)',
               backdropFilter: 'blur(12px)',
               WebkitBackdropFilter: 'blur(12px)',
-              border: '1px solid rgba(111,66,193,0.30)',
+              border: '1px solid color-mix(in oklab, #6F42C1 30%, transparent)',
               fontSize: 12,
               fontWeight: 700,
-              color: 'rgba(255,255,255,0.92)',
+              color: 'var(--foreground)',
               marginBottom: 20,
             }}
           >
@@ -96,10 +91,10 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
             />
             Парсер ниши · готов · 1 мин 24 сек
           </div>
-          <h2 style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 12 }}>
-            Ниша: <span style={gradientTextStyle}>{data.niche}</span>
+          <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 12 }}>
+            Ниша: <span className="brand-gradient-text">{data.niche}</span>
           </h2>
-          <p className="text-muted-foreground" style={{ fontSize: 15, lineHeight: 1.55, maxWidth: 600 }}>
+          <p className="text-muted-foreground" style={{ fontSize: 14, lineHeight: 1.55, maxWidth: 600 }}>
             AI Авитолог разобрал топ-объявления, смотри что у конкурентов
           </p>
 
@@ -160,7 +155,7 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
       {/* Метрики */}
       <Reveal>
       <section style={{ marginBottom: 48 }}>
-        <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Ключевые метрики</h3>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Ключевые метрики</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <RevealItem index={0} staggerDelay={0.08}>
             <div
@@ -179,7 +174,7 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
               >
                 Конкурентов
               </div>
-              <div style={{ fontSize: 36, fontWeight: 800, lineHeight: 1 }}>{data.competitors}</div>
+              <div style={{ fontSize: 30, fontWeight: 800, lineHeight: 1 }}>{data.competitors}</div>
               <div className="text-muted-foreground" style={{ fontSize: 12, marginTop: 8 }}>
                 активных продавцов
               </div>
@@ -203,7 +198,7 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
               >
                 Средняя цена
               </div>
-              <div style={{ fontSize: 36, fontWeight: 800, lineHeight: 1 }}>
+              <div style={{ fontSize: 30, fontWeight: 800, lineHeight: 1 }}>
                 {formatNumber(data.avg_price)}
                 <span className="text-muted-foreground" style={{ fontSize: 16, fontWeight: 500, marginLeft: 4 }}>
                   ₽
@@ -232,7 +227,7 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
               >
                 Лидер
               </div>
-              <div style={{ fontSize: 36, fontWeight: 800, lineHeight: 1 }}>
+              <div style={{ fontSize: 30, fontWeight: 800, lineHeight: 1 }}>
                 {data.leader_share}
                 <span className="text-muted-foreground" style={{ fontSize: 16, fontWeight: 500, marginLeft: 4 }}>
                   %
@@ -250,7 +245,7 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
       {/* Топ-5 объявлений */}
       <Reveal>
       <section style={{ marginBottom: 48 }}>
-        <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Топ-5 объявлений</h3>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Топ-5 объявлений</h3>
         <div className="space-y-3">
           {data.top_ads.map((ad, idx) => (
             <RevealItem key={ad.id} index={idx} staggerDelay={0.05}>
@@ -348,7 +343,7 @@ export function ParserReportPage({ onBack }: ParserReportPageProps) {
       {/* Инсайты */}
       <Reveal>
       <section style={{ marginBottom: 48 }}>
-        <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Что заметил AI Авитолог</h3>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Что заметил AI Авитолог</h3>
         <div className="space-y-3">
           {data.insights.map((insight, idx) => (
             <RevealItem key={idx} index={idx} staggerDelay={0.07}>

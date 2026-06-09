@@ -110,10 +110,10 @@ export function ToolsCatalog({ onNavigateToChat, onNavigateToTools }: ToolsCatal
       />
       <div className="container max-w-[1200px] mx-auto px-5">
         <div className="text-center mb-10 md:mb-14">
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight m-0 text-foreground">
+          <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight m-0 text-foreground">
             Инструменты сервиса
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto">
             Каждый инструмент решает задачу одного шага методологии. Можно проходить шаги в чате с AI Авитологом или использовать инструменты отдельно.
           </p>
         </div>

@@ -21,12 +21,7 @@ const FALLBACK_RESULTS: PositionResult[] = [
   { id: '11122233', title: 'Калитки металлические под ключ', position: 12, city: 'Москва' },
 ];
 
-const gradientText: React.CSSProperties = {
-  background: 'linear-gradient(180deg,#C5B0F0,#6F42C1)',
-  WebkitBackgroundClip: 'text',
-  backgroundClip: 'text',
-  color: 'transparent',
-};
+// Используется через className="brand-gradient-text" (адаптивно по теме)
 
 export function ToolPositionPage({ onBack }: ToolPositionPageProps) {
   const [ids, setIds] = useState('');
@@ -70,13 +65,13 @@ export function ToolPositionPage({ onBack }: ToolPositionPageProps) {
             style={{
               padding: '8px 14px',
               borderRadius: 999,
-              background: 'rgba(20,25,38,0.55)',
+              background: 'color-mix(in oklab, var(--card) 75%, transparent)',
               backdropFilter: 'blur(12px)',
               WebkitBackdropFilter: 'blur(12px)',
-              border: '1px solid rgba(111,66,193,0.30)',
+              border: '1px solid color-mix(in oklab, #6F42C1 30%, transparent)',
               fontSize: 12,
               fontWeight: 700,
-              color: 'rgba(255,255,255,0.92)',
+              color: 'var(--foreground)',
               marginBottom: 20,
             }}
           >
@@ -93,16 +88,16 @@ export function ToolPositionPage({ onBack }: ToolPositionPageProps) {
           </div>
           <h1
             style={{
-              fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+              fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
               fontWeight: 800,
               lineHeight: 1.1,
               marginBottom: 12,
               letterSpacing: '-0.02em',
             }}
           >
-            Проверь <span style={gradientText}>позиции</span> своих объявлений
+            Проверь <span className="brand-gradient-text">позиции</span> своих объявлений
           </h1>
-          <p className="text-muted-foreground" style={{ fontSize: 16, lineHeight: 1.55, maxWidth: 600 }}>
+          <p className="text-muted-foreground" style={{ fontSize: 14, lineHeight: 1.55, maxWidth: 600 }}>
             Узнай где твои объявления в поиске Авито прямо сейчас. До 50 ID за раз.
           </p>
         </div>
@@ -111,10 +106,10 @@ export function ToolPositionPage({ onBack }: ToolPositionPageProps) {
       <Reveal delay={0.05}>
         <div
           style={{
-            background: 'rgba(20,25,38,0.45)',
+            background: 'color-mix(in oklab, var(--card) 85%, transparent)',
             backdropFilter: 'blur(16px)',
             WebkitBackdropFilter: 'blur(16px)',
-            border: '1px solid rgba(111,66,193,0.20)',
+            border: '1px solid color-mix(in oklab, #6F42C1 20%, transparent)',
             borderRadius: 20,
             padding: '24px 28px',
             marginBottom: 32,
@@ -158,12 +153,11 @@ export function ToolPositionPage({ onBack }: ToolPositionPageProps) {
             <RevealItem key={i} index={i} staggerDelay={0.07}>
               <div className="bg-card border border-border rounded-2xl p-5 h-full">
                 <div
-                  className="w-10 h-10 rounded-xl border grid place-items-center mb-3"
+                  className="w-10 h-10 rounded-xl border grid place-items-center mb-3 brand-icon-color"
                   style={{
                     background:
                       'linear-gradient(135deg, rgba(111,66,193,0.20) 0%, rgba(154,127,224,0.10) 100%)',
-                    borderColor: 'rgba(154,127,224,0.20)',
-                    color: '#C5B0F0',
+                    borderColor: 'rgba(154,127,224,0.30)',
                   }}
                 >
                   {f.icon}
@@ -196,10 +190,7 @@ export function ToolPositionPage({ onBack }: ToolPositionPageProps) {
                         ID {r.id} · {r.city}
                       </div>
                     </div>
-                    <div
-                      className="text-2xl font-extrabold"
-                      style={gradientText}
-                    >
+                    <div className="brand-gradient-text text-2xl font-extrabold">
                       #{r.position}
                     </div>
                   </div>

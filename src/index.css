@@ -4348,3 +4348,38 @@ html {
     transform: translateX(48px);
   }
 }
+
+/* === Theme-aware brand gradient text ===
+   In light theme: deeper purple so it's readable on white.
+   In dark theme: light → deep purple as canonical brand gradient. */
+.brand-gradient-text {
+  background: linear-gradient(180deg, #6F42C1 0%, #4A2E80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .brand-gradient-text {
+  background: linear-gradient(180deg, #C5B0F0 0%, #6F42C1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Theme-aware shadow for primary CTA buttons */
+.brand-cta-shadow {
+  box-shadow: 0 8px 24px rgba(111, 66, 193, 0.18);
+}
+
+.dark .brand-cta-shadow {
+  box-shadow: 0 8px 24px rgba(111, 66, 193, 0.35);
+}
+
+/* Theme-aware brand icon color (deep purple on light, light purple on dark) */
+.brand-icon-color {
+  color: #6F42C1;
+}
+
+.dark .brand-icon-color {
+  color: #C5B0F0;
+}

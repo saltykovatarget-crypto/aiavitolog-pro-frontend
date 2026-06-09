@@ -33,8 +33,8 @@ interface ToolCardProps {
 
 const BADGE_STYLES: Record<NonNullable<ToolDefinition['badge']>, { label: string; cls: string }> = {
   new:  { label: 'НОВОЕ',  cls: 'bg-gradient-to-r from-[#6F42C1] to-[#9A7FE0] text-white' },
-  hit:  { label: 'ХИТ',   cls: 'bg-[#6F42C1]/20 text-[#C5B0F0] border border-[#6F42C1]/40' },
-  soon: { label: 'СКОРО', cls: 'bg-white/10 text-white/70 border border-white/15' },
+  hit:  { label: 'ХИТ',   cls: 'bg-[#6F42C1]/20 text-[#6F42C1] dark:text-[#C5B0F0] border border-[#6F42C1]/40' },
+  soon: { label: 'СКОРО', cls: 'bg-muted/40 text-muted-foreground border border-border' },
 };
 
 function formatPrice(t: ToolDefinition): string {
@@ -75,7 +75,7 @@ export function ToolCard({
 
       {/* Иконка + заголовок */}
       <div className="flex items-start gap-3">
-        <div className="shrink-0 w-12 h-12 grid place-items-center rounded-xl bg-gradient-to-br from-[#6F42C1]/20 to-[#9A7FE0]/10 border border-[#9A7FE0]/20 text-[#C5B0F0]">
+        <div className="shrink-0 w-12 h-12 grid place-items-center rounded-xl bg-gradient-to-br from-[#6F42C1]/20 to-[#9A7FE0]/10 border border-[#9A7FE0]/30 text-[#6F42C1] dark:text-[#C5B0F0]">
           {tool.iconSvg ?? <Wrench className="w-5 h-5" />}
         </div>
         <div className="min-w-0 flex-1">
@@ -106,14 +106,10 @@ export function ToolCard({
 
       {/* Цена */}
       <div className="mt-auto">
-        <div className="text-2xl md:text-[28px] font-extrabold leading-none"
-             style={{
-               background: 'linear-gradient(180deg, #C5B0F0 0%, #6F42C1 100%)',
-               WebkitBackgroundClip: 'text',
-               backgroundClip: 'text',
-               color: 'transparent',
-               letterSpacing: '-0.02em',
-             }}>
+        <div
+          className="brand-gradient-text text-xl md:text-2xl font-extrabold leading-none"
+          style={{ letterSpacing: '-0.02em' }}
+        >
           {formatPrice(tool)}
         </div>
       </div>

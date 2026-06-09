@@ -82,11 +82,11 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
               <span className="partners-eyebrow-dot" />
               <span>Партнёрская программа</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight m-0 text-foreground mt-5">
+            <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight m-0 text-foreground mt-5">
               Приведи клиента —{' '}
               <span className="partners-h2-accent">получи 30%</span>
             </h2>
-            <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
+            <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto">
               30% с первого пополнения каждого приведённого клиента. Сразу на партнёрский баланс.
               Без условий, без лимитов, без ожидания.
             </p>

@@ -30,11 +30,11 @@ export function AiInterpretation({ onNavigateToChat }: AiInterpretationProps) {
       <div className="container max-w-[1200px] mx-auto px-5">
 
         <div className="text-center mb-10 md:mb-14">
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight m-0 text-foreground">
+          <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight m-0 text-foreground">
             Это не просто инструменты.<br />
             Каждый результат разбирает AI&nbsp;Авитолог
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto">
             Конкуренты дают данные — и оставляют тебя с ними один на один.
             У нас после каждого прогона AI Авитолог расшифровывает результат в чате
             и ведёт по методологии дальше.

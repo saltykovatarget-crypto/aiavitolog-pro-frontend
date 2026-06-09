@@ -135,10 +135,10 @@ export function WhoItsFor() {
       />
       <div className="container max-w-[1200px] mx-auto px-5">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight m-0 text-foreground">
+          <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight m-0 text-foreground">
             Кому подойдет сервис
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto break-words hyphens-none">
+          <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto break-words hyphens-none">
             AI Авитолог PRO — это профессиональный нейроавитолог для системной работы с Авито, а не генератор случайных советов.
           </p>
         </div>

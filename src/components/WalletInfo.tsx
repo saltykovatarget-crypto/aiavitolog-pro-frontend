@@ -50,10 +50,10 @@ export function WalletInfo({ onRegister }: WalletInfoProps) {
               <span className="wi-eyebrow-dot" />
               <span>Без подписок · без лимитов · деньги не сгорают</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight m-0 text-foreground mt-5">
+            <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight m-0 text-foreground mt-5">
               Как это работает
             </h2>
-            <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
+            <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto">
               Один кошелёк в рублях. Платишь только за то, что используешь.
               Регистрация даёт <span className="text-foreground font-semibold">50 ₽ бонусом</span>.
             </p>

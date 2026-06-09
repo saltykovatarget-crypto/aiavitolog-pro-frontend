@@ -200,8 +200,8 @@ export function WalletPage({
                   <RevealItem key={tx.id} index={idx} staggerDelay={0.04}>
                   <div
                     className={`flex items-center gap-3 px-4 py-3 md:px-5 md:py-4 ${
-                      idx !== visible.length - 1 ? 'border-b border-[rgba(255,255,255,0.05)]' : ''
-                    } hover:bg-[rgba(255,255,255,0.02)] transition`}
+                      idx !== visible.length - 1 ? 'border-b border-border/60' : ''
+                    } hover:bg-muted/30 transition`}
                   >
                     <div className="shrink-0 w-9 h-9 md:w-10 md:h-10 grid place-items-center rounded-xl bg-gradient-to-br from-[#6F42C1]/20 to-[#9A7FE0]/10">
                       {getTxIcon(tx)}

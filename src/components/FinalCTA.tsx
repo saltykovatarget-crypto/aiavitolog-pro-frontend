@@ -129,7 +129,7 @@ export function FinalCTA({ onNavigateToChat }: FinalCTAProps) {
         }
 
         .final-h2 {
-          font-size: clamp(1.875rem, 4vw, 2.75rem);
+          font-size: clamp(1.5rem, 3vw, 2.25rem);
           font-weight: 700;
           line-height: 1.1;
           letter-spacing: -0.02em;

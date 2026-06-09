@@ -262,11 +262,11 @@ export function ToolsPage({
       <div
         className="sticky top-0 z-30 backdrop-blur-xl"
         style={{
-          background: 'rgba(13,13,26,0.60)',
-          borderBottom: '1px solid rgba(111,66,193,0.15)',
+          background: 'color-mix(in oklab, var(--background) 70%, transparent)',
+          borderBottom: '1px solid color-mix(in oklab, #6F42C1 15%, transparent)',
         }}
       >
-        <div className="container max-w-[1200px] mx-auto px-5 h-14 flex items-center justify-between gap-3">
+        <div className="container max-w-[1200px] mx-auto px-5 h-16 flex items-center justify-between gap-3">
           {/* Левый блок: бренд-лого + название + бейдж PRO (как в UniversalHeader) */}
           <a
             href="#chat"
@@ -338,13 +338,13 @@ export function ToolsPage({
                 style={{
                   padding: '8px 14px',
                   borderRadius: 999,
-                  background: 'rgba(20,25,38,0.55)',
+                  background: 'color-mix(in oklab, var(--card) 75%, transparent)',
                   backdropFilter: 'blur(12px)',
                   WebkitBackdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(111,66,193,0.30)',
+                  border: '1px solid color-mix(in oklab, #6F42C1 30%, transparent)',
                   fontSize: 12,
                   fontWeight: 700,
-                  color: 'rgba(255,255,255,0.92)',
+                  color: 'var(--foreground)',
                   marginBottom: 20,
                 }}
               >
@@ -362,7 +362,7 @@ export function ToolsPage({
 
               <h2
                 style={{
-                  fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+                  fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
                   lineHeight: 1.1,
                   fontWeight: 700,
                   letterSpacing: '-0.02em',
@@ -370,14 +370,7 @@ export function ToolsPage({
                 }}
               >
                 Что хочешь{' '}
-                <span
-                  style={{
-                    background: 'linear-gradient(180deg, #C5B0F0 0%, #6F42C1 100%)',
-                    WebkitBackgroundClip: 'text',
-                    backgroundClip: 'text',
-                    color: 'transparent',
-                  }}
-                >
+                <span className="brand-gradient-text">
                   сделать
                 </span>
                 ?
@@ -401,10 +394,10 @@ export function ToolsPage({
                         flexDirection: 'column',
                         gap: 16,
                         padding: 24,
-                        background: 'rgba(20,25,38,0.45)',
+                        background: 'color-mix(in oklab, var(--card) 85%, transparent)',
                         backdropFilter: 'blur(16px)',
                         WebkitBackdropFilter: 'blur(16px)',
-                        border: '1px solid rgba(111,66,193,0.20)',
+                        border: '1px solid color-mix(in oklab, #6F42C1 20%, transparent)',
                         borderRadius: 20,
                         cursor: 'pointer',
                         transition: 'all 0.2s ease',
@@ -426,17 +419,17 @@ export function ToolsPage({
                           flexShrink: 0,
                         }}
                       >
-                        <Icon className="w-7 h-7 text-[#C5B0F0]" />
+                        <Icon className="w-7 h-7 text-[#6F42C1] dark:text-[#C5B0F0]" />
                       </div>
 
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div
                           style={{
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: 700,
                             lineHeight: 1.2,
                             marginBottom: 6,
-                            color: '#fff',
+                            color: 'var(--foreground)',
                           }}
                         >
                           {opt.title}
@@ -444,7 +437,7 @@ export function ToolsPage({
                         <div
                           style={{
                             fontSize: 13,
-                            color: 'rgba(255,255,255,0.65)',
+                            color: 'var(--muted-foreground)',
                             lineHeight: 1.5,
                           }}
                         >
@@ -458,17 +451,13 @@ export function ToolsPage({
                           alignItems: 'center',
                           justifyContent: 'space-between',
                           paddingTop: 12,
-                          borderTop: '1px solid rgba(255,255,255,0.06)',
+                          borderTop: '1px solid color-mix(in oklab, var(--border) 60%, transparent)',
                         }}
                       >
-                        <span
+                        <span className="brand-gradient-text"
                           style={{
                             fontSize: 20,
                             fontWeight: 800,
-                            background: 'linear-gradient(180deg, #C5B0F0, #6F42C1)',
-                            WebkitBackgroundClip: 'text',
-                            backgroundClip: 'text',
-                            color: 'transparent',
                           }}
                         >
                           {opt.priceLabel}
@@ -511,16 +500,13 @@ export function ToolsPage({
                 <div className="mb-4 flex items-baseline justify-between gap-3">
                   <div>
                     <div
+                      className="brand-gradient-text"
                       style={{
                         display: 'inline-block',
                         fontSize: 11,
                         fontWeight: 800,
                         letterSpacing: 1.5,
                         textTransform: 'uppercase',
-                        background: 'linear-gradient(90deg, #C5B0F0, #6F42C1)',
-                        WebkitBackgroundClip: 'text',
-                        backgroundClip: 'text',
-                        color: 'transparent',
                         marginBottom: 4,
                       }}
                     >

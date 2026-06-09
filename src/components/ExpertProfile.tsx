@@ -33,10 +33,10 @@ export function ExpertProfile() {
 
         {/* Section header */}
         <div className="text-center mb-12 md:mb-14">
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight m-0 text-foreground">
+          <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight m-0 text-foreground">
             Кто стоит за AI&nbsp;Авитолог PRO
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto">
             Это не очередной AI-генератор от стартаперов.
             За продуктом — практикующий авитолог с реальными кейсами.
           </p>

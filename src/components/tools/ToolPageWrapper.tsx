@@ -60,11 +60,11 @@ export function ToolPageWrapper({ onBack, children }: ToolPageWrapperProps) {
       <div
         className="sticky top-0 z-30 backdrop-blur-xl"
         style={{
-          background: 'rgba(13,13,26,0.60)',
-          borderBottom: '1px solid rgba(111,66,193,0.15)',
+          background: 'color-mix(in oklab, var(--background) 70%, transparent)',
+          borderBottom: '1px solid color-mix(in oklab, #6F42C1 15%, transparent)',
         }}
       >
-        <div className="container max-w-[1200px] mx-auto px-5 h-14 flex items-center justify-between gap-3">
+        <div className="container max-w-[1200px] mx-auto px-5 h-16 flex items-center justify-between gap-3">
           {/* Левый блок: бренд-лого + название + бейдж PRO (как в UniversalHeader) */}
           <a
             href="#chat"

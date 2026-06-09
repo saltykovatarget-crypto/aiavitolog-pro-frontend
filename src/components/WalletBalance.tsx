@@ -99,10 +99,10 @@ export function WalletBalance({
       <div
         className="flex flex-col gap-3 p-5"
         style={{
-          background: 'rgba(20,25,38,0.45)',
+          background: 'color-mix(in oklab, var(--card) 85%, transparent)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          border: '1px solid rgba(111,66,193,0.20)',
+          border: '1px solid color-mix(in oklab, #6F42C1 20%, transparent)',
           borderRadius: 20,
         }}
       >
@@ -133,7 +133,7 @@ export function WalletBalance({
   return (
     <div className="flex items-center gap-1.5">
       <div
-        className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]`}
+        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-muted/30 border border-border"
         title="Баланс кошелька"
       >
         <Wallet className={`w-3.5 h-3.5 ${iconColorClass}`} />
