@@ -19,16 +19,16 @@ const STEPS = [
   },
   {
     num: '03',
-    title: 'Получаешь 30%',
+    title: 'Получаешь 5%',
     desc: 'С первого пополнения каждого приведённого клиента — на твой партнёрский баланс.',
   },
 ];
 
 const EXAMPLES = [
-  { paid: 100, commission: 30 },
-  { paid: 390, commission: 117 },
-  { paid: 990, commission: 297, highlighted: true },
-  { paid: 1490, commission: 447 },
+  { paid: 1000, commission: 50 },
+  { paid: 1500, commission: 75, highlighted: true },
+  { paid: 3000, commission: 150 },
+  { paid: 5000, commission: 250 },
 ];
 
 const ICON_LINK = (
@@ -62,7 +62,7 @@ const STEP_ICONS = [ICON_USER, ICON_LINK, ICON_WALLET];
 
 export function PartnersProgram({ onApply }: PartnersProgramProps) {
   return (
-    <section id="partners" className="partners-section py-16 md:py-24 relative overflow-hidden">
+    <section id="partners" className="partners-section py-12 md:py-16 relative overflow-hidden">
       {/* Ambient bg */}
       <div
         aria-hidden="true"
@@ -77,17 +77,17 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
 
         {/* Header */}
         <Reveal>
-          <div className="text-center mb-12 md:mb-14">
+          <div className="text-center mb-8 md:mb-10">
             <div className="partners-eyebrow">
               <span className="partners-eyebrow-dot" />
               <span>Партнёрская программа</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight m-0 text-foreground mt-5">
               Приведи клиента —{' '}
-              <span className="partners-h2-accent">получи 30%</span>
+              <span className="partners-h2-accent">получи 5%</span>
             </h2>
             <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto">
-              30% с первого пополнения каждого приведённого клиента. Сразу на партнёрский баланс.
+              5% с первого пополнения каждого приведённого клиента. Сразу на партнёрский баланс.
               Без условий, без лимитов, без ожидания.
             </p>
           </div>
@@ -97,7 +97,7 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
         <Reveal delay={0.1}>
           <div className="partners-big">
             <div className="partners-big-num">
-              <span className="partners-big-percent">30</span>
+              <span className="partners-big-percent">5</span>
               <span className="partners-big-sign">%</span>
             </div>
             <div className="partners-big-text">
@@ -161,14 +161,14 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
             <div className="partners-projection-eq">
               <span>50 рефералов</span>
               <span className="partners-projection-sep">×</span>
-              <span>600 ₽</span>
+              <span>1 500 ₽</span>
               <span className="partners-projection-sep">×</span>
-              <span>30%</span>
+              <span>5%</span>
               <span className="partners-projection-sep">=</span>
-              <span className="partners-projection-result">9 000 ₽</span>
+              <span className="partners-projection-result">3 750 ₽</span>
             </div>
             <p className="partners-projection-note">
-              Средний чек первого пополнения ≈ 600 ₽ (пакет 100 запросов или пополнение под проект).
+              Средний чек первого пополнения ≈ 1 500 ₽ (пакет запросов или пополнение под проект).
               Чем больше клиентов — тем больше пассивный заработок.
             </p>
           </div>
@@ -181,7 +181,7 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
               <div className="partners-why-check">✓</div>
               <div>
                 <div className="partners-why-title">Разовая выплата, не lifetime</div>
-                <div className="partners-why-text">Получаешь свои 30% сразу. Не ждёшь годами, не зависишь от того, останется ли клиент с нами.</div>
+                <div className="partners-why-text">Получаешь свои 5% сразу. Не ждёшь годами, не зависишь от того, останется ли клиент с нами.</div>
               </div>
             </div>
             <div className="partners-why-item">
@@ -264,9 +264,9 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
 
         /* ===== Big percent block ===== */
         .partners-big {
-          margin: 0 auto 36px;
+          margin: 0 auto 24px;
           max-width: 640px;
-          padding: 26px 28px;
+          padding: 20px 24px;
           display: flex;
           align-items: center;
           gap: 24px;
@@ -285,7 +285,7 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
           flex-shrink: 0;
         }
         .partners-big-percent {
-          font-size: 96px;
+          font-size: 64px;
           font-weight: 900;
           line-height: 0.9;
           background: linear-gradient(180deg, #C5B0F0 0%, #6F42C1 100%);
@@ -296,10 +296,10 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
           font-feature-settings: "tnum";
         }
         @media (max-width: 639px) {
-          .partners-big-percent { font-size: 72px; }
+          .partners-big-percent { font-size: 52px; }
         }
         .partners-big-sign {
-          font-size: 48px;
+          font-size: 36px;
           font-weight: 800;
           background: linear-gradient(180deg, #C5B0F0 0%, #6F42C1 100%);
           -webkit-background-clip: text;
@@ -308,7 +308,7 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
           letter-spacing: -0.02em;
         }
         @media (max-width: 639px) {
-          .partners-big-sign { font-size: 36px; }
+          .partners-big-sign { font-size: 28px; }
         }
         .partners-big-title {
           font-size: 18px;
@@ -331,7 +331,7 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
 
         /* ===== Examples grid ===== */
         .partners-examples {
-          margin-top: 28px;
+          margin-top: 20px;
         }
         .partners-examples-label {
           text-align: center;
@@ -423,7 +423,7 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
 
         /* ===== How it works ===== */
         .partners-how {
-          margin-top: 44px;
+          margin-top: 32px;
         }
         .partners-how-title {
           text-align: center;
@@ -492,7 +492,7 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
 
         /* ===== Projection ===== */
         .partners-projection {
-          margin-top: 36px;
+          margin-top: 24px;
           padding: 22px 24px;
           background: linear-gradient(135deg, rgba(111, 66, 193, 0.10), rgba(52, 211, 153, 0.04));
           border: 1px solid rgba(154, 127, 224, 0.22);
@@ -540,7 +540,7 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
 
         /* ===== Why ===== */
         .partners-why {
-          margin-top: 36px;
+          margin-top: 24px;
           display: grid;
           grid-template-columns: 1fr;
           gap: 14px;
@@ -583,7 +583,7 @@ export function PartnersProgram({ onApply }: PartnersProgramProps) {
 
         /* ===== CTA ===== */
         .partners-cta {
-          margin-top: 40px;
+          margin-top: 28px;
           display: flex;
           flex-direction: column;
           align-items: center;
