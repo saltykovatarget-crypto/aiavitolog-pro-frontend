@@ -47,7 +47,7 @@ const TOOLS_BY_GROUP: Array<{
       {
         id: 'xls_analysis',
         name: 'Анализ статистики кабинета',
-        description: 'Залей XLS из кабинета Авито — AI разберёт цифры',
+        description: 'Залей XLS из кабинета Авито — AI Авитолог разберёт цифры',
         benefits: ['Просмотры, контакты, конверсия', 'Стоимость заявки', 'Что в топе у тебя'],
         estimatedTime: '~1 минута',
         priceKopecks: 5000,
@@ -57,7 +57,7 @@ const TOOLS_BY_GROUP: Array<{
       {
         id: 'audit',
         name: 'Аудит объявлений',
-        description: 'XLS + парсер ниши + AI-диагностика «что не так и что делать»',
+        description: 'XLS + парсер ниши + AI Авитолог-диагностика «что не так и что делать»',
         benefits: ['Сравнение тебя с топом', '3 главные проблемы', 'План действий'],
         estimatedTime: '~5 минут',
         priceKopecks: 59000,
@@ -109,7 +109,7 @@ const TOOLS_BY_GROUP: Array<{
       {
         id: 'photo_gen',
         name: 'Генерация фото',
-        description: 'AI делает фото-баннеры под Авито',
+        description: 'AI Авитолог делает фото-баннеры под Авито',
         priceKopecks: 1900,
         iconSvg: <ImageIcon className="w-5 h-5" />,
         status: 'coming_soon',
@@ -154,7 +154,7 @@ const QUICK_START_OPTIONS: Array<{
     id: 'just_ask',
     Icon: MessageCircle,
     title: 'Просто спросить совет',
-    subtitle: 'Новый чат с AI',
+    subtitle: 'Новый чат с AI Авитологом',
     priceLabel: 'от 5 ₽',
   },
 ];
@@ -256,10 +256,58 @@ export function ToolsPage({
       <main className="relative z-10 container max-w-[1200px] mx-auto px-5 py-8 md:py-10">
         {/* === Hero «Быстрый старт» === */}
         <Reveal>
-          <section className="mb-10">
-            <div className="text-center mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Что хочешь сделать?</h2>
-              <p className="mt-2 text-sm md:text-base text-muted-foreground">
+          <section className="mb-16 md:mb-20">
+            <div className="flex flex-col items-center text-center mb-8">
+              <div
+                className="inline-flex items-center gap-2"
+                style={{
+                  padding: '8px 14px',
+                  borderRadius: 999,
+                  background: 'rgba(20,25,38,0.55)',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(111,66,193,0.30)',
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: 'rgba(255,255,255,0.92)',
+                  marginBottom: 20,
+                }}
+              >
+                <span
+                  style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    background: '#34d399',
+                    boxShadow: '0 0 12px rgba(52,211,153,0.6)',
+                  }}
+                />
+                Каталог инструментов · {TOOLS_BY_GROUP.reduce((acc, g) => acc + g.tools.length, 0)} штук
+              </div>
+
+              <h2
+                style={{
+                  fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+                  lineHeight: 1.1,
+                  fontWeight: 700,
+                  letterSpacing: '-0.02em',
+                  marginBottom: 12,
+                }}
+              >
+                Что хочешь{' '}
+                <span
+                  style={{
+                    background: 'linear-gradient(180deg, #C5B0F0 0%, #6F42C1 100%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    color: 'transparent',
+                  }}
+                >
+                  сделать
+                </span>
+                ?
+              </h2>
+              <p className="text-sm md:text-base text-muted-foreground">
                 Самые частые сценарии — в один клик
               </p>
             </div>
@@ -272,24 +320,77 @@ export function ToolsPage({
                     <button
                       type="button"
                       onClick={() => onLaunchTool?.(opt.id)}
-                      className="quick-start-card group relative w-full h-full text-left flex flex-col gap-3 p-5 md:p-6 rounded-2xl"
+                      className="quick-start-glass-card group relative w-full h-full text-left"
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 16,
+                        padding: 24,
+                        background: 'rgba(20,25,38,0.45)',
+                        backdropFilter: 'blur(16px)',
+                        WebkitBackdropFilter: 'blur(16px)',
+                        border: '1px solid rgba(111,66,193,0.20)',
+                        borderRadius: 20,
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease',
+                        minHeight: 200,
+                      }}
                     >
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6F42C1]/20 to-[#9A7FE0]/10 border border-[#9A7FE0]/20 flex items-center justify-center shrink-0">
-                        <Icon className="w-5 h-5 text-[#C5B0F0]" />
+                      <div
+                        style={{
+                          width: 56,
+                          height: 56,
+                          borderRadius: 16,
+                          background:
+                            'linear-gradient(135deg, rgba(111,66,193,0.25), rgba(154,127,224,0.12))',
+                          border: '1px solid rgba(154,127,224,0.30)',
+                          boxShadow: '0 8px 20px rgba(111,66,193,0.20)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                        }}
+                      >
+                        <Icon className="w-7 h-7 text-[#C5B0F0]" />
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-bold text-base md:text-lg leading-tight text-white">
+
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div
+                          style={{
+                            fontSize: 18,
+                            fontWeight: 700,
+                            lineHeight: 1.2,
+                            marginBottom: 6,
+                            color: '#fff',
+                          }}
+                        >
                           {opt.title}
                         </div>
-                        <div className="mt-1 text-xs md:text-sm text-muted-foreground leading-snug">
+                        <div
+                          style={{
+                            fontSize: 13,
+                            color: 'rgba(255,255,255,0.65)',
+                            lineHeight: 1.5,
+                          }}
+                        >
                           {opt.subtitle}
                         </div>
                       </div>
-                      <div className="flex items-center justify-between mt-auto pt-1">
+
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          paddingTop: 12,
+                          borderTop: '1px solid rgba(255,255,255,0.06)',
+                        }}
+                      >
                         <span
-                          className="text-base font-extrabold"
                           style={{
-                            background: 'linear-gradient(180deg, #C5B0F0 0%, #6F42C1 100%)',
+                            fontSize: 20,
+                            fontWeight: 800,
+                            background: 'linear-gradient(180deg, #C5B0F0, #6F42C1)',
                             WebkitBackgroundClip: 'text',
                             backgroundClip: 'text',
                             color: 'transparent',
@@ -297,7 +398,7 @@ export function ToolsPage({
                         >
                           {opt.priceLabel}
                         </span>
-                        <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-[#9A7FE0] group-hover:translate-x-0.5 transition" />
+                        <ChevronRight className="w-5 h-5 text-[#9A7FE0] group-hover:translate-x-0.5 transition-transform" />
                       </div>
                     </button>
                   </RevealItem>
@@ -318,20 +419,10 @@ export function ToolsPage({
                 }
               }
               .quick-start-grid > * { height: 100%; }
-              .quick-start-card {
-                min-height: 176px;
-                background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
-                background-color: var(--card);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                transition: border-color .2s, transform .2s, box-shadow .2s;
-              }
-              .quick-start-card:hover {
-                border-color: rgba(154, 127, 224, 0.60);
+              .quick-start-glass-card:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 10px 30px rgba(111, 66, 193, 0.15);
-              }
-              @media (min-width: 768px) {
-                .quick-start-card { min-height: 192px; }
+                border-color: rgba(154,127,224,0.50) !important;
+                box-shadow: 0 12px 32px rgba(111,66,193,0.20);
               }
             `}</style>
           </section>
@@ -344,11 +435,24 @@ export function ToolsPage({
               <div>
                 <div className="mb-4 flex items-baseline justify-between gap-3">
                   <div>
-                    <div className="text-[10px] md:text-[11px] font-bold tracking-[1.5px] uppercase text-muted-foreground">
+                    <div
+                      style={{
+                        display: 'inline-block',
+                        fontSize: 11,
+                        fontWeight: 800,
+                        letterSpacing: 1.5,
+                        textTransform: 'uppercase',
+                        background: 'linear-gradient(90deg, #C5B0F0, #6F42C1)',
+                        WebkitBackgroundClip: 'text',
+                        backgroundClip: 'text',
+                        color: 'transparent',
+                        marginBottom: 4,
+                      }}
+                    >
                       {group.groupTitle}
                     </div>
                     {group.groupSubtitle && (
-                      <div className="text-xs text-muted-foreground/60 mt-1">
+                      <div className="text-xs text-muted-foreground/60">
                         {group.groupSubtitle}
                       </div>
                     )}
