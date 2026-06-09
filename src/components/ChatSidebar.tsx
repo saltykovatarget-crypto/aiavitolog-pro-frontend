@@ -160,26 +160,45 @@ export function ChatSidebar({
         </div>
 
         {/* Legal block — RKN requirement */}
-        <div className="pt-3 mt-3 border-t border-border flex flex-col gap-0.5 text-[10px] text-muted-foreground">
+        <div
+          className="pt-3 mt-3 border-t border-border flex flex-col gap-1 text-muted-foreground"
+          style={{ fontSize: 10, lineHeight: 1.4 }}
+        >
           <a
             href="https://t.me/valeriia_avitolog"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-1.5 mb-2 px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-[#6F42C1] to-[#9A7FE0] text-white font-semibold text-[11px] hover:opacity-90 transition"
+            className="flex items-center justify-center gap-1.5 mb-2 px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-[#6F42C1] to-[#9A7FE0] text-white font-semibold hover:opacity-90 transition"
+            style={{ fontSize: 11 }}
           >
             <Send className="w-3 h-3" />
             Наш блог
           </a>
-          <a href="/policies/privacy-policy" style={{ display: 'block' }} className="hover:text-foreground transition leading-tight">
+          <a
+            href="/policies/privacy-policy"
+            className="hover:text-foreground transition"
+            style={{ display: 'block', fontSize: 10, lineHeight: 1.4, padding: '2px 0' }}
+          >
             Политика конфиденциальности
           </a>
-          <a href="/offer" style={{ display: 'block' }} className="hover:text-foreground transition leading-tight">
+          <a
+            href="/offer"
+            className="hover:text-foreground transition"
+            style={{ display: 'block', fontSize: 10, lineHeight: 1.4, padding: '2px 0' }}
+          >
             Пользовательское соглашение
           </a>
-          <a href="/cookies" style={{ display: 'block' }} className="hover:text-foreground transition leading-tight">
+          <a
+            href="/cookies"
+            className="hover:text-foreground transition"
+            style={{ display: 'block', fontSize: 10, lineHeight: 1.4, padding: '2px 0' }}
+          >
             Политика cookies
           </a>
-          <p className="text-[9px] opacity-50 pt-1.5 leading-snug">
+          <p
+            className="opacity-50"
+            style={{ fontSize: 9, lineHeight: 1.4, paddingTop: 6, margin: 0 }}
+          >
             © 2024–{new Date().getFullYear()} ИП Салтыкова В.В. · ИНН 540303308700
           </p>
         </div>
