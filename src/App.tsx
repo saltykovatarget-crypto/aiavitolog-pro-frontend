@@ -240,6 +240,10 @@ export default function App() {
           const { ParserReportPage } = await import('./components/ParserReportPage');
           component = ParserReportPage;
           break;
+        case 'PartnersPage':
+          const { PartnersPage } = await import('./components/PartnersPage');
+          component = PartnersPage;
+          break;
         default:
           throw new Error(`Unknown component: ${componentName}`);
       }
@@ -358,6 +362,7 @@ export default function App() {
       case 'tool/xls': return 'ToolXlsPage';
       case 'tool/position': return 'ToolPositionPage';
       case 'parser-report': return 'ParserReportPage';
+      case 'partners-page': return 'PartnersPage';
       case 'tools': return 'ToolsPage';
       default: return 'Landing';
     }
@@ -518,6 +523,9 @@ export default function App() {
 
       case 'parser-report':
         return <Component onBack={() => navigate('tools')} />;
+
+      case 'partners-page':
+        return <Component onBack={() => navigate('landing')} />;
 
       default:
         return (
