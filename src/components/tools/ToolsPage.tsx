@@ -69,7 +69,7 @@ const TOOLS_BY_GROUP: Array<{
   },
   {
     groupId: 'competitive',
-    groupTitle: 'Конкурентная разведка',
+    groupTitle: 'Глубокий анализ',
     tools: [
       {
         id: 'parser_seller',

@@ -44,7 +44,7 @@ export function FinalCTA({ onNavigateToChat }: FinalCTAProps) {
             </h2>
 
             <p className="final-sub">
-              50 ₽ бонусом при регистрации. Авансовый кошелёк, без подписок и лимитов.
+              50 ₽ бонусом при регистрации. Кошелёк в рублях, без подписок и лимитов.
             </p>
 
             {/* CTAs */}

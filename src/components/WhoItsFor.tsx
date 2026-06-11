@@ -139,7 +139,7 @@ export function WhoItsFor() {
             Кому подойдет сервис
           </h2>
           <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto break-words hyphens-none">
-            AI Авитолог PRO — это профессиональный нейроавитолог для системной работы с Авито, а не генератор случайных советов.
+            AI Авитолог PRO — это профессиональный AI Авитолог для системной работы с Авито, а не генератор случайных советов.
           </p>
         </div>
 

@@ -244,8 +244,20 @@ export function TopupModal({
                         }`}
                       >
                         {pkg.highlighted && (
-                          <div className="absolute -top-2.5 right-3 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-widest bg-gradient-to-r from-[#6F42C1] to-[#9A7FE0] text-white rounded-full shadow">
-                            ⭐ Лучшее
+                          <div
+                            className="absolute right-3 rounded-full uppercase"
+                            style={{
+                              top: -10,
+                              padding: '3px 9px',
+                              fontSize: 9,
+                              fontWeight: 700,
+                              letterSpacing: 1,
+                              background: 'linear-gradient(90deg, #6F42C1, #9A7FE0)',
+                              color: '#fff',
+                              boxShadow: '0 4px 14px rgba(111, 66, 193, 0.45)',
+                            }}
+                          >
+                            ПОПУЛЯРНЫЙ
                           </div>
                         )}
                         <div className="flex items-start justify-between gap-3">

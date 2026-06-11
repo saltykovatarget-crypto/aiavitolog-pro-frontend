@@ -1,4 +1,5 @@
 import React from 'react';
+import { MessageCircle, Search, BarChart3, Image as ImageIcon, Pencil, Radar } from 'lucide-react';
 import { Reveal, RevealItem } from './landing/Reveal';
 
 interface WalletInfoProps {
@@ -6,13 +7,20 @@ interface WalletInfoProps {
   onRegister?: () => void;
 }
 
-const ACTIONS = [
-  { icon: '💬', name: 'Ответ AI Авитолога', price: 5 },
-  { icon: '🔍', name: 'Парсер конкурентов', price: 190, hint: 'AI Авитолог находит точки роста без слива бюджета' },
-  { icon: '📊', name: 'Анализ статистики кабинета Авито', price: 50, hint: 'Заливаешь XLS — AI Авитолог разбирает и показывает слабые места' },
-  { icon: '🖼️', name: 'Генерация фото для объявлений', price: 19 },
-  { icon: '✏️', name: 'Наложение плашки на фото', price: 9 },
-  { icon: '📡', name: 'Проверка позиций объявлений', price: 99 },
+interface WalletAction {
+  Icon: React.ComponentType<{ className?: string }>;
+  name: string;
+  price: number;
+  hint?: string;
+}
+
+const ACTIONS: WalletAction[] = [
+  { Icon: MessageCircle, name: 'Ответ AI Авитолога', price: 5 },
+  { Icon: Search, name: 'Парсер конкурентов', price: 190, hint: 'AI Авитолог находит точки роста без слива бюджета' },
+  { Icon: BarChart3, name: 'Анализ статистики кабинета Авито', price: 50, hint: 'Заливаешь XLS — AI Авитолог разбирает и показывает слабые места' },
+  { Icon: ImageIcon, name: 'Генерация фото для объявлений', price: 19 },
+  { Icon: Pencil, name: 'Наложение плашки на фото', price: 9 },
+  { Icon: Radar, name: 'Проверка позиций объявлений', price: 99 },
 ];
 
 const PACKAGES = [
@@ -82,7 +90,12 @@ export function WalletInfo({ onRegister }: WalletInfoProps) {
                   <RevealItem key={a.name} index={i} staggerDelay={0.06}>
                     <div className="wi-action">
                       <div className="wi-action-left">
-                        <span className="wi-action-icon">{a.icon}</span>
+                        <div
+                          className="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center"
+                          style={{ background: 'linear-gradient(135deg, #6F42C1, #9A7FE0)' }}
+                        >
+                          <a.Icon className="w-5 h-5 text-white" />
+                        </div>
                         <div className="wi-action-text">
                           <span className="wi-action-name">{a.name}</span>
                           {a.hint && <span className="wi-action-hint">{a.hint}</span>}
@@ -108,7 +121,12 @@ export function WalletInfo({ onRegister }: WalletInfoProps) {
                   <RevealItem key={p.requests} index={i} staggerDelay={0.08}>
                     <div className={`wi-package ${p.highlighted ? 'wi-package--popular' : ''}`}>
                       {p.highlighted && (
-                        <div className="wi-package-badge">⭐ Лучшее</div>
+                        <div
+                          className="wi-package-badge"
+                          style={{ background: 'linear-gradient(90deg, #6F42C1, #9A7FE0)', color: '#fff', fontWeight: 700 }}
+                        >
+                          ПОПУЛЯРНЫЙ
+                        </div>
                       )}
                       <div className="wi-package-head">
                         <div className="wi-package-requests">{p.requests} запросов</div>
@@ -277,13 +295,6 @@ export function WalletInfo({ onRegister }: WalletInfoProps) {
           gap: 12px;
           min-width: 0;
           flex: 1;
-        }
-        .wi-action-icon {
-          font-size: 20px;
-          width: 28px;
-          text-align: center;
-          flex-shrink: 0;
-          margin-top: 1px;
         }
         .wi-action-text {
           display: flex;
