@@ -88,18 +88,36 @@ export default function App() {
     }
   });
 
-  // Apply theme changes
+  // Маркетинговые страницы (витрина) — всегда тёмная тема, независимо от выбора юзера.
+  // Светлая/тёмная переключается только в рабочей среде: чат, /tools, /wallet, /profile.
+  const isMarketingPage =
+    currentPage === 'landing' ||
+    currentPage === 'partners-page' ||
+    currentPage.startsWith('policy/');
+
+  // Локальные переключатели (ToolsPage, ToolPageWrapper) пишут выбор юзера
+  // в localStorage напрямую — при смене страницы перечитываем, чтобы App не затирал его.
   React.useEffect(() => {
     try {
-      if (isDark) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      const saved = localStorage.getItem('theme');
+      if (saved) setIsDark(saved === 'dark');
+    } catch {}
+  }, [currentPage]);
+
+  // Класс на <html>: витрина всегда тёмная, рабочая среда — по выбору юзера
+  React.useEffect(() => {
+    try {
+      document.documentElement.classList.toggle('dark', isMarketingPage || isDark);
     } catch (error) {
       console.error('Theme error:', error);
     }
+  }, [isDark, isMarketingPage]);
+
+  // Выбор юзера сохраняется только при реальном переключении
+  React.useEffect(() => {
+    try {
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch {}
   }, [isDark]);
 
   // Handle navigation
