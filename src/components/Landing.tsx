@@ -135,7 +135,9 @@ export function Landing({ onNavigateToChat, onNavigateToPricing, onNavigateToToo
         <WalletInfo onRegister={onNavigateToChat} />
         <FAQ />
         <PartnersProgram onApply={onNavigateToChat} />
-        <ArticlesPreview />
+        {/* Блог временно скрыт: секция на заглушках (PLACEHOLDER_ARTICLES, ссылки /blog ведут в никуда).
+            Вернуть, когда появятся реальные статьи — просто раскомментировать строку ниже. */}
+        {/* <ArticlesPreview /> */}
         <FinalCTA onNavigateToChat={onNavigateToChat} />
       </main>
 
