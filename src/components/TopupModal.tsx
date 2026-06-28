@@ -149,7 +149,10 @@ export function TopupModal({
         if (e.target === e.currentTarget && !waitingPayment) onClose();
       }}
     >
-      <div className="relative w-full max-w-[520px] max-h-[90vh] overflow-y-auto rounded-2xl border border-border bg-card shadow-2xl">
+      <div
+        className="relative w-full overflow-y-auto rounded-2xl border border-border bg-card shadow-2xl"
+        style={{ maxWidth: 520, maxHeight: '90vh' }}
+      >
         {/* Header */}
         <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-border">
           <div>
@@ -202,10 +205,9 @@ export function TopupModal({
                   type="button"
                   onClick={() => setTab('package')}
                   className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
-                    tab === 'package'
-                      ? 'bg-gradient-to-r from-[#6F42C1] to-[#9A7FE0] text-white shadow'
-                      : 'text-muted-foreground hover:text-foreground'
+                    tab === 'package' ? 'text-white shadow' : 'text-muted-foreground hover:text-foreground'
                   }`}
+                  style={tab === 'package' ? { background: 'linear-gradient(90deg, #6F42C1, #9A7FE0)' } : undefined}
                 >
                   <span className="inline-flex items-center gap-1.5">
                     <Sparkles className="w-3 h-3" />
@@ -216,10 +218,9 @@ export function TopupModal({
                   type="button"
                   onClick={() => setTab('regular')}
                   className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
-                    tab === 'regular'
-                      ? 'bg-gradient-to-r from-[#6F42C1] to-[#9A7FE0] text-white shadow'
-                      : 'text-muted-foreground hover:text-foreground'
+                    tab === 'regular' ? 'text-white shadow' : 'text-muted-foreground hover:text-foreground'
                   }`}
+                  style={tab === 'regular' ? { background: 'linear-gradient(90deg, #6F42C1, #9A7FE0)' } : undefined}
                 >
                   Любая сумма
                 </button>
@@ -351,7 +352,11 @@ export function TopupModal({
                 type="button"
                 onClick={submit}
                 disabled={submitting}
-                className="w-full h-12 rounded-full bg-gradient-to-r from-[#6F42C1] to-[#9A7FE0] text-white font-semibold text-sm shadow-[0_10px_30px_-12px_rgba(111,66,193,0.6)] hover:brightness-110 active:brightness-95 transition disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                className="w-full h-12 rounded-full text-white font-semibold text-sm hover:brightness-110 active:brightness-95 transition disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                style={{
+                  background: 'linear-gradient(90deg, #6F42C1, #9A7FE0)',
+                  boxShadow: '0 12px 30px -12px rgba(111, 66, 193, 0.6)',
+                }}
               >
                 {submitting ? (
                   <>
