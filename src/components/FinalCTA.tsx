@@ -104,16 +104,16 @@ export function FinalCTA({ onNavigateToChat }: FinalCTAProps) {
           align-items: center;
           gap: 8px;
           padding: 7px 14px;
-          background: rgba(20, 25, 38, 0.65);
+          background: rgba(20, 25, 38, 0.55);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           border: 1px solid rgba(154, 127, 224, 0.35);
           border-radius: 999px;
           font-size: 11px;
           font-weight: 700;
-          letter-spacing: 1.2px;
+          letter-spacing: 1px;
           text-transform: uppercase;
-          color: rgba(255, 255, 255, 0.85);
+          color: rgba(255, 255, 255, 0.82);
         }
         .final-eyebrow-dot {
           width: 7px;
