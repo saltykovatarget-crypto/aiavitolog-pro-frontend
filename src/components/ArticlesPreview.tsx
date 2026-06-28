@@ -50,7 +50,7 @@ export function ArticlesPreview() {
 
         <div className="articles-header">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight m-0 text-foreground">
+            <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight m-0 text-foreground">
               Полезные материалы
             </h2>
             <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl">
