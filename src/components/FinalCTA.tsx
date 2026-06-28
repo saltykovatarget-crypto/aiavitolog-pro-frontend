@@ -54,7 +54,7 @@ export function FinalCTA({ onNavigateToChat }: FinalCTAProps) {
                 size="lg"
                 className="hero-cta-primary rounded-full px-8 md:px-10 text-sm md:text-base h-12"
               >
-                Начать прямо сейчас →
+                Начать — 50 ₽ на старт →
               </Button>
               <Button
                 onClick={scrollToPricing}

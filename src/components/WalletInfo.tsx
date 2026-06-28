@@ -179,7 +179,7 @@ export function WalletInfo({ onRegister }: WalletInfoProps) {
               className="hero-cta-primary rounded-full px-8 md:px-10 text-sm md:text-base h-12 inline-flex items-center justify-center font-semibold"
               onClick={onRegister}
             >
-              Зарегистрироваться — 50 ₽ на старт →
+              Начать — 50 ₽ на старт →
             </button>
             <div className="wi-cta-note">
               Без карты на старте · оплата только через Точка Банк

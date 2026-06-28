@@ -196,7 +196,7 @@ export function HowItWorks({ onNavigateToChat }: HowItWorksProps) {
               className="hero-cta-primary rounded-full px-8 md:px-10 text-sm md:text-base h-12"
               onClick={onNavigateToChat}
             >
-              Начать с первого шага бесплатно →
+              Начать — 50 ₽ на старт →
             </Button>
             <div className="mt-3 text-[12px] text-muted-foreground">
               50 ₽ бонусом при регистрации — хватит на 10 ответов AI Авитолога
