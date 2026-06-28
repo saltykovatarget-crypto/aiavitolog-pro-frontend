@@ -101,21 +101,6 @@ export function AiInterpretation({ onNavigateToChat }: AiInterpretationProps) {
           pointer-events: none;
         }
 
-        .ai-eyebrow {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 6px 14px;
-          background: rgba(111, 66, 193, 0.15);
-          border: 1px solid rgba(111, 66, 193, 0.3);
-          border-radius: 999px;
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 1.5px;
-          text-transform: uppercase;
-          color: #9A7FE0;
-        }
-
         .ai-flow {
           display: grid;
           grid-template-columns: 1fr;
