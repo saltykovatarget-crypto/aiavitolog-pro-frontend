@@ -7,7 +7,6 @@ import { AiInterpretation } from './AiInterpretation';
 import { BeforeAfter } from './BeforeAfter';
 import { ExpertProfile } from './ExpertProfile';
 import { WhoItsFor } from './WhoItsFor';
-import { Pricing } from './Pricing';
 import { WalletInfo } from './WalletInfo';
 import { FAQ } from './FAQ';
 import { PartnersProgram } from './PartnersProgram';
